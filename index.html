@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam 1 - longswab</title>
+  <style>
+    body { 
+      margin: 0; padding: 0; 
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #1a1a2e; 
+      color: #fff; 
+      display: flex; 
+      flex-direction: column; 
+      height: 100vh; 
+    }
+    .redirect { 
+      flex: 1; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      flex-direction: column;
+      gap: 20px;
+    }
+    .btn { 
+      padding: 12px 32px; 
+      background: #1680f6; 
+      color: white; 
+      border: none; 
+      border-radius: 25px; 
+      font-size: 1.1em; 
+      font-weight: 600; 
+      text-decoration: none; 
+      transition: background 0.3s; 
+    }
+    .btn:hover { background: #0f5db4; }
+    .countdown { font-size: 1.5em; color: #aaa; }
+  </style>
+</head>
+<body>
+  <div class="redirect">
+    <h1>📂 Exam 모음</h1>
+    <p>Exam 1로 자동 이동합니다 (3초)</p>
+    <div class="countdown" id="countdown">3</div>
+    <a href="1.html" class="btn">지금 이동하기 →</a>
+    <p>
+      <a href="2.html" style="color:#ccc;">2</a> | 
+      <a href="3.html" style="color:#ccc;">3</a> | 
+      <a href="4.html" style="color:#ccc;">4</a>
+    </p>
+  </div>
+
+  <script>
+    let count = 3;
+    const timer = setInterval(() => {
+      count--;
+      document.getElementById('countdown').textContent = count;
+      if (count <= 0) {
+        clearInterval(timer);
+        window.location.href = '1.html';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
